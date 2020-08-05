@@ -1,0 +1,22 @@
+/**
+ * from: The target collection.
+ * localField: The local join field.
+ * foreignField: The target join field.
+ * as: The name for the results.
+ * pipeline: The pipeline to run on the joined collection.
+ * let: Optional variables to use in the pipeline field stages.
+ */
+{
+  from: 'comments',
+  let: { movie_id: "$_id"},
+  pipeline: [
+    { $match: 
+      { $expr: 
+          {$eq: ["$movie_id", "$$movie_id"]}
+      }
+    },
+    { $project: {_id: 0, movie_id: 0, email: 0}},
+    { $sort:  {"date": -1}}
+    ],
+  as: 'comments'
+}

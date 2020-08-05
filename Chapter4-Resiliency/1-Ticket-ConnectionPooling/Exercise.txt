@@ -1,0 +1,3 @@
+just put a paramether "&maxPoolSize=50" to your connection string in properties.
+
+https://stackoverflow.com/questions/24557774/mongo-connection-poolingchanging-the-size-of-connection-pool/50407284#50407284

@@ -1,0 +1,3 @@
+just add the code below in the end of your connection string:
+
+&connectTimeoutMS=2000&wtimeoutMS=2500
